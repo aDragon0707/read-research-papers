@@ -1,116 +1,154 @@
 # Read Research Papers
 
-`read-research-papers` is a Codex skill that applies S. Keshav's three-pass method to research papers and exploratory literature surveys.
+[中文](./README.md) | [English](./README.en.md)
 
-这是一个面向 Codex 的论文阅读 skill：先建立全局地图，再检查论证与证据，最后在确有必要时进行深度重建。它保留 Keshav 原始方法的紧凑结构，不把每篇论文都强制读到同一深度。
+`read-research-papers` 是一个面向 Codex 的论文阅读 skill，依据 S. Keshav 的三遍阅读法，将论文阅读拆成由浅入深的三个阶段。
 
-## Scope
+它的核心原则不是“每篇论文都从头读到尾”，而是：**先建立全局地图，再检查论证与证据，只有确有必要时才进行深度重建。**
 
-Use this skill when the task is to:
+> 这个 skill 是一套论文阅读深度调度框架。它本身不是系统综述协议、实验复现框架，也不能单独证明读者已经掌握论文内容。
 
-- screen or triage a research paper;
-- understand and review a paper at progressively greater depth;
-- reconstruct a paper's argument, method, or system;
-- perform exploratory citation chaining in an unfamiliar field.
+## 适用场景
 
-This is a reading-depth framework. It is **not**, by itself, a systematic-review protocol, an experimental-reproduction framework, or proof that a learner has mastered the paper.
+当任务包含以下目标时，可以使用这个 skill：
 
-## The Three Passes
+- 快速筛选一篇研究论文是否值得继续阅读；
+- 逐步理解、审查或评议论文；
+- 重建论文的论证、方法、系统或实验思路；
+- 在陌生领域中通过引用链进行探索性文献调查。
 
-| Pass | Typical time | Goal | Main output |
+如果只是查找一个数字、提取引用、翻译或校对论文，通常不需要启动完整的三遍法。
+
+## 三遍阅读法
+
+| 阶段 | 参考时间 | 目标 | 主要输出 |
 |---|---:|---|---|
-| First | 5–10 minutes | Obtain a bird's-eye view | The five Cs and a continue/stop decision |
-| Second | Up to 1 hour | Understand the main thrust and supporting evidence | Key points, evidence, comments, and background references |
-| Third | About 4–5 hours for a beginner | Reconstruct the work and challenge its assumptions | Reconstructed structure, strengths, weaknesses, assumptions, and future-work ideas |
+| 第一遍 | 5–10 分钟 | 获得论文的全局鸟瞰图 | 五个 C，以及继续或停止的决定 |
+| 第二遍 | 最多约 1 小时 | 理解论文主线及其支撑证据 | 关键观点、证据、评论和背景文献 |
+| 第三遍 | 初学者约 4–5 小时 | 重建论文并挑战关键假设 | 重建结构、优缺点、隐含假设和未来工作 |
 
-Stop after any pass when that depth is sufficient for the reading purpose.
+任何一遍结束后，只要当前深度已经满足阅读目的，就可以停止。
 
-### First Pass — Map the paper
+### 第一遍：建立论文地图
 
-Read the title, abstract, introduction, section headings, conclusion, and references. Then report the five Cs:
+重点阅读：
 
-1. **Category** — What type of paper is this?
-2. **Context** — What prior work and theoretical basis does it use?
-3. **Correctness** — Do its assumptions appear valid at this preliminary depth?
-4. **Contributions** — What does the paper claim as its main contribution?
-5. **Clarity** — Is the paper clearly written?
+1. 标题、摘要和引言；
+2. 章节与小节标题；
+3. 结论；
+4. 参考文献列表。
 
-The first pass supports screening; it does not establish that the paper's claims are verified.
+完成后回答五个 C：
 
-### Second Pass — Follow the evidence
+1. **Category（类别）**：这是什么类型的论文？
+2. **Context（语境）**：它依赖哪些相关工作和理论基础？
+3. **Correctness（正确性）**：在当前阅读深度下，其假设是否初步合理？
+4. **Contributions（贡献）**：作者声称的主要贡献是什么？
+5. **Clarity（清晰度）**：论文是否表达清楚？
 
-Read more carefully while temporarily setting aside details such as full proofs. Inspect figures, diagrams, graph axes, error bars, and relevant references. The goal is to explain the paper's main thrust and the evidence used to support it.
+第一遍主要用于筛选。它只能形成初步可信度判断，不能证明论文主张已经得到独立验证。
 
-If the paper remains unclear, identify why: missing terminology, unfamiliar proof or experimental technique, poor writing, unsupported assertions, excessive forward references, or reader fatigue. Then stop, repair the missing background, or continue to the third pass.
+### 第二遍：理解主线和证据
 
-### Third Pass — Reconstruct the work
+更仔细地阅读论文，但暂时略过完整证明等细节。重点检查：
 
-Virtually re-implement the paper: adopt the authors' assumptions, recreate the reasoning or system, compare the reconstruction with the paper, challenge important assumptions, and record weaknesses and future-work ideas.
+- 图、表、流程图和其他插图；
+- 图表坐标轴、单位和误差条；
+- 支撑主要结论的实验或分析；
+- 值得进一步阅读的背景文献。
 
-For an AI system, a generated reconstruction is analysis evidence—not proof of a human reader's memory, implementation, replication, or mastery.
+完成标准是：能够向他人概括论文的核心主线，以及作者用什么证据支撑它。
 
-## Exploratory Literature Survey
+如果仍然无法理解，应先判断原因：术语陌生、证明或实验技术陌生、写作质量差、主张缺少支撑、前向引用过多，还是阅读疲劳。然后选择暂停、补背景或进入第三遍。
 
-The skill also supports iterative citation chaining:
+### 第三遍：重建论文
 
-1. Find three to five recent seed papers and, if available, a recent survey.
-2. Identify shared citations, repeated researchers, and candidate key papers.
-3. Inspect recent proceedings from the field's main conferences.
-4. Make additional passes and add repeatedly cited missing work.
+以“虚拟重新实现”的方式深读：
 
-This produces an exploratory survey set. A systematic or scoping review additionally requires an explicit database strategy, search strings, inclusion/exclusion criteria, deduplication, and coverage reporting.
+1. 暂时采用作者的假设，尝试重新构造其工作；
+2. 将自己的重建与论文比较；
+3. 寻找创新点、隐藏缺陷和隐含假设；
+4. 思考自己会如何重新表达或实现这些思想；
+5. 记录潜在的未来工作。
 
-## Report Contract
+完成后应能重建论文整体结构，并明确指出其强项、弱点、隐含假设、可能遗漏的相关工作，以及实验或分析技术中的潜在问题。
 
-The skill reports only what the completed passes support:
+对于 AI 代理，生成一份流畅的重建报告只能证明“论文已被分析”，不能自动证明人类读者完成了闭卷回忆、代码实现、实验复现或知识掌握。
 
-- completed pass and the reason for stopping or continuing;
-- five Cs after the first pass;
-- main thrust, supporting evidence, and relevant background references after the second pass;
-- reconstructed structure, strengths, weaknesses, assumptions, technique issues, missing citations, and future-work ideas after the third pass;
-- seed papers, shared citations, repeated researchers, conferences, proceedings, and iteration changes for a literature survey.
+## 探索性文献调查
 
-## Example Requests
+三遍法也可以用于陌生领域的引用链调查：
+
+1. 通过学术搜索找到 3–5 篇近期种子论文，并寻找较新的综述；
+2. 识别共同引用、重复出现的作者和候选关键论文；
+3. 检查该领域主要会议的近期论文；
+4. 对收集到的论文继续执行前两遍，并补充反复出现但尚未收录的关键工作。
+
+该流程得到的是探索性文献集合，不等同于系统综述。系统综述还需要明确数据库、检索式、纳入与排除标准、去重方法和覆盖范围。
+
+## 输出约定
+
+skill 只报告已经完成的阅读遍次能够支撑的内容：
+
+- 当前完成了第几遍，以及停止或继续的原因；
+- 第一遍后报告五个 C；
+- 第二遍后报告论文主线、支撑证据和相关背景文献；
+- 第三遍后报告重建结构、强项、弱点、假设、技术问题、可能遗漏的引用和未来工作；
+- 文献调查时报告种子论文、共同引用、重复研究者、主要会议、近期论文集和每次迭代带来的变化。
+
+## 使用示例
 
 ```text
-Use the three-pass method to screen this paper. Stop after the first pass.
+使用三遍阅读法筛选这篇论文，只完成第一遍，然后告诉我是否值得继续。
 ```
 
 ```text
-Apply the first and second passes, then explain the paper's main claim and supporting evidence.
+对这篇论文执行第一遍和第二遍，解释它的核心主张以及作者提供的支撑证据。
 ```
 
 ```text
-Read this paper to third-pass depth and clearly separate conceptual reconstruction from anything not implemented or reproduced.
+把这篇论文读到第三遍深度，并明确区分概念重建、代码实现和未经复现的实验结果。
 ```
 
 ```text
-用三遍阅读法带我读这篇论文。先完成第一遍，并告诉我是否值得继续。
+使用引用链方法调查这个研究方向，并记录每一轮新增了哪些关键论文。
 ```
 
-## Installation
+## 安装
 
-Place the skill file at:
+将 `SKILL.md` 放到 Codex 的 skill 目录：
 
 ```text
 ~/.codex/skills/read-research-papers/SKILL.md
 ```
 
-Repository layout:
+仓库结构：
 
 ```text
 read-research-papers/
-├── README.md    # Documentation; not part of the runtime instructions
-└── SKILL.md     # Complete Codex skill
+├── README.md       # 中文说明
+├── README.en.md    # English documentation
+└── SKILL.md        # 完整的 Codex skill 运行指令
 ```
 
-Restart or reload Codex if the newly installed skill is not detected immediately.
+如果 Codex 没有立即识别新 skill，请重新加载或重启 Codex。
 
-## Source
+## 方法边界
 
-This skill is based on S. Keshav, *How to Read a Paper*, ACM SIGCOMM Computer Communication Review, 37(3), 2007:
+当前版本有意保留 Keshav 原始三遍法的紧凑结构。它适合建立论文地图和安排阅读深度，但没有内置以下能力：
+
+- 针对不同学科的专用证据审计；
+- 机器学习论文的 tensor shape、mask、训练配置和复现检查；
+- 系统综述所需的完整检索与纳入协议；
+- 用闭卷生成、迁移题或延迟回忆验证学习者掌握程度。
+
+这些限制不代表三遍法无效，而是说明“阅读论文”和“证明已经学会或复现论文”是不同任务。
+
+## 原始来源
+
+本 skill 基于 S. Keshav 的论文 *How to Read a Paper*，发表于 ACM SIGCOMM Computer Communication Review, 37(3), 2007：
 
 - [DOI: 10.1145/1273445.1273458](https://doi.org/10.1145/1273445.1273458)
-- [Author-hosted PDF](https://web.stanford.edu/class/ee384m/Handouts/HowtoReadPaper.pdf)
+- [作者托管的 PDF](https://web.stanford.edu/class/ee384m/Handouts/HowtoReadPaper.pdf)
 
-The repository documents an operational adaptation for Codex; it does not claim authorship of Keshav's original method.
+本仓库提供的是面向 Codex 的操作化改编，不主张拥有 Keshav 原始方法的作者身份。
