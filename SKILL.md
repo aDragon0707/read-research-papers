@@ -7,6 +7,10 @@ description: Apply S. Keshav's three-pass method to research papers and literatu
 
 Read a paper in up to three passes instead of reading linearly from beginning to end. Give each pass a specific goal and build each pass on the preceding one. Stop when the completed pass is sufficient for the reading purpose.
 
+## Paper Source
+
+Use the requested edition when available and identify the edition actually read. Record a stable link or DOI and a version or venue when available. If a needed section, figure, or table is inaccessible, state what you could read and keep any dependent judgment provisional. If sources disagree on a material claim, cite the conflicting locations.
+
 ## First Pass
 
 Spend about five to ten minutes obtaining a bird's-eye view.
@@ -20,8 +24,8 @@ Complete the pass by answering the five Cs:
 
 1. **Category:** Identify the type of paper, such as a measurement paper, an analysis of an existing system, or a description of a research prototype.
 2. **Context:** Identify related papers and the theoretical bases used to analyze the problem.
-3. **Correctness:** Judge whether the assumptions appear valid.
-4. **Contributions:** State the paper's main contributions.
+3. **Correctness:** Assess the apparent plausibility of the assumptions. Mark judgments that need the methods or results as open.
+4. **Contributions:** State the authors' claimed contributions.
 5. **Clarity:** Judge whether the paper is well written.
 
 Decide whether to continue. Stop when the paper is not relevant, the required background is missing, the assumptions appear invalid, or a first-pass understanding is sufficient.
@@ -30,11 +34,14 @@ Decide whether to continue. Stop when the paper is not relevant, the required ba
 
 Spend up to one hour reading with greater care while ignoring details such as proofs. Record key points and comments while reading.
 
-1. Inspect figures, diagrams, and other illustrations carefully.
-2. Inspect graph axes and whether results include error bars supporting statistically significant conclusions.
+1. Read the methods and results relevant to the reading goal, including their figures and tables.
+2. For each main claim you discuss, perform a check suited to the claim.
+   - **Mechanism:** Trace one concrete input through the relevant steps to the output. Check dimensions and constraints where they affect the result.
+   - **Derivation:** State the assumptions and work through the step the claim depends on.
+   - **Experiment:** Identify the data, metric, baseline, changed variables, and result. Check what the comparison supports and what uncertainty the paper reports.
 3. Mark relevant unread references for further reading and background study.
 
-Complete the pass when the paper's content is understood well enough to summarize its main thrust and supporting evidence to another person.
+Complete the pass when you can explain the main argument and show what the checks established. Mark any unresolved point that limits the explanation.
 
 When the paper remains unclear, identify whether the cause is unfamiliar terminology, an unfamiliar proof or experimental technique, poor writing, unsupported assertions, excessive forward references, or reader fatigue. Then choose to set the paper aside, return after reading background material, or continue to the third pass.
 
@@ -66,7 +73,12 @@ Apply the three-pass method iteratively when surveying an unfamiliar field.
 Report only the material supported by the passes performed:
 
 - Record which pass was completed and why reading stopped or continued.
+- Name the edition read and cite a section, page, equation, figure, or table for each key paper claim or result discussed. Attribute external explanations to their sources and label your own deductions.
 - After the first pass, report the five Cs.
 - After the second pass, report the main thrust, supporting evidence, and relevant unread references.
 - After the third pass, report the reconstructed structure, strengths, weaknesses, assumptions, missing citations, technique issues, and future-work ideas.
 - For a literature survey, report the seed papers, shared citations, repeated researchers, top conferences, recent proceedings, and each iteration that changed the survey set.
+
+## Method Source
+
+S. Keshav, [How to Read a Paper](https://doi.org/10.1145/1273445.1273458), ACM SIGCOMM Computer Communication Review 37(3), 2007.

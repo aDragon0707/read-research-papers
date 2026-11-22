@@ -52,12 +52,12 @@ The first pass supports screening. It forms only a preliminary plausibility judg
 
 Read more carefully while temporarily setting aside details such as complete proofs. Inspect:
 
-- figures, tables, diagrams, and other illustrations;
-- graph axes, units, and error bars;
-- experiments or analyses supporting the main conclusions;
+- the inputs, key operations, and outputs of a mechanism, or the step a derivation depends on;
+- the data, metric, baseline, changed variables, result, and reported uncertainty of an experiment;
+- figures and tables that show what the check supports;
 - background references worth reading next.
 
-The pass is complete when you can explain the paper's main thrust and the evidence the authors use to support it.
+After the pass, explain the main argument, what your checks established, and which points remain open.
 
 If the paper remains unclear, identify the cause: unfamiliar terminology, an unfamiliar proof or experimental technique, poor writing, unsupported assertions, excessive forward references, or reader fatigue. Then pause, repair the missing background, or continue to the third pass.
 
@@ -91,6 +91,7 @@ This produces an exploratory literature set, not a systematic review. A systemat
 The skill reports only material supported by the passes actually completed:
 
 - the completed pass and the reason for stopping or continuing;
+- the edition read and the source location of each key claim or result, with external explanations and your own deductions identified;
 - the five Cs after the first pass;
 - the main thrust, supporting evidence, and relevant background references after the second pass;
 - reconstructed structure, strengths, weaknesses, assumptions, technique issues, missing citations, and future-work ideas after the third pass;
@@ -137,8 +138,8 @@ Reload or restart Codex if the newly installed skill is not detected immediately
 
 This version intentionally preserves the compact structure of Keshav's original method. It is useful for mapping papers and selecting reading depth, but it does not include:
 
-- discipline-specific evidence audits;
-- tensor-shape, masking, training-configuration, or reproduction checks for machine-learning papers;
+- comprehensive discipline-specific evidence audits;
+- machine-learning checklists and an experimental reproduction workflow;
 - a complete search and inclusion protocol for systematic reviews;
 - learner-mastery validation through closed-book generation, transfer tasks, or delayed recall.
 
