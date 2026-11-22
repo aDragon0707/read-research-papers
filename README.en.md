@@ -14,6 +14,7 @@ Use this skill when the task is to:
 
 - screen or triage a research paper;
 - understand, review, or critique a paper at progressively greater depth;
+- read a paper with Codex and check understanding one difficulty at a time;
 - reconstruct a paper's argument, method, system, or experimental reasoning;
 - perform exploratory citation chaining in an unfamiliar field.
 
@@ -46,20 +47,20 @@ Then answer the five Cs:
 4. **Contributions** — What does the paper claim as its main contribution?
 5. **Clarity** — Is the paper clearly written?
 
-The first pass supports screening. It forms only a preliminary plausibility judgment and does not independently verify the paper's claims.
+For screening, the first pass supports a preliminary plausibility judgment. When studying a chosen paper, address the prerequisite that blocks the current passage, then return to that passage.
 
 ### Second Pass — Follow the argument and evidence
 
-Read more carefully while temporarily setting aside details such as complete proofs. Inspect:
+Read more carefully while setting aside details outside the reading goal. Inspect:
 
 - the inputs, key operations, and outputs of a mechanism, or the step a derivation depends on;
-- the data, metric, baseline, changed variables, result, and reported uncertainty of an experiment;
+- the data, metric, baseline, changed variables, result, relevant figure axes and units, and reported uncertainty of an experiment;
 - figures and tables that show what the check supports;
 - background references worth reading next.
 
 After the pass, explain the main argument, what your checks established, and which points remain open.
 
-If the paper remains unclear, identify the cause: unfamiliar terminology, an unfamiliar proof or experimental technique, poor writing, unsupported assertions, excessive forward references, or reader fatigue. Then pause, repair the missing background, or continue to the third pass.
+If the paper remains unclear, identify the cause. When missing background blocks a chosen paper, address the prerequisite and return to the passage. Otherwise, decide whether to pause or use a deeper pass.
 
 ### Third Pass — Reconstruct the work
 
@@ -73,7 +74,11 @@ Read by virtually re-implementing the paper:
 
 The pass is complete when the paper's overall structure can be reconstructed and its strengths, weaknesses, assumptions, missing citations, and possible technical problems can be identified.
 
-For an AI agent, a fluent reconstruction report proves only that the paper was analyzed. It does not automatically prove human closed-book recall, implementation, experimental replication, or mastery.
+### Guided Reading and Checks
+
+Start with a short map anchored in the paper, then address the reader's current difficulty. Codex asks one question and waits for the reader's reasoning. If the answer exposes a gap, explain the missing step. Change one condition for a follow-up and record demonstrated understanding when the reader can explain the changed case.
+
+A focused third-pass exercise can reconstruct a single component. Report the scope checked. Use the reader's reasoning for conceptual reconstruction, execution results for implementation, and replication records for experimental reproduction.
 
 ## Exploratory Literature Survey
 
@@ -94,7 +99,8 @@ The skill reports only material supported by the passes actually completed:
 - the edition read and the source location of each key claim or result, with external explanations and your own deductions identified;
 - the five Cs after the first pass;
 - the main thrust, supporting evidence, and relevant background references after the second pass;
-- reconstructed structure, strengths, weaknesses, assumptions, technique issues, missing citations, and future-work ideas after the third pass;
+- reconstructed structure, strengths, weaknesses, assumptions, technique issues, missing citations, and future-work ideas after a full third pass. For a focused exercise, report its scope and what was demonstrated;
+- the current question, what the reader demonstrated, and any open follow-up in guided reading;
 - seed papers, shared citations, repeated researchers, conferences, proceedings, and iteration changes for a literature survey.
 
 ## Example Requests
@@ -109,6 +115,10 @@ Apply the first and second passes, then explain the paper's main claim and the e
 
 ```text
 Read this paper to third-pass depth and clearly separate conceptual reconstruction, implementation, and experimental results that were not reproduced.
+```
+
+```text
+Read this paper with me. Ask one focused question, give feedback on my reasoning, then change a condition to check my understanding.
 ```
 
 ```text
@@ -141,7 +151,7 @@ This version intentionally preserves the compact structure of Keshav's original 
 - comprehensive discipline-specific evidence audits;
 - machine-learning checklists and an experimental reproduction workflow;
 - a complete search and inclusion protocol for systematic reviews;
-- learner-mastery validation through closed-book generation, transfer tasks, or delayed recall.
+- long-term mastery assessment through delayed recall.
 
 These boundaries do not make the three-pass method ineffective. They distinguish reading a paper from proving that the paper has been learned or reproduced.
 

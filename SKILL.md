@@ -1,11 +1,11 @@
 ---
 name: read-research-papers
-description: Apply S. Keshav's three-pass method to research papers and literature surveys. Use when reading, screening, understanding, reviewing, reconstructing, or surveying research papers at progressively greater depth.
+description: Apply S. Keshav's three-pass method to screen, understand, review, or reconstruct research papers, guide a reader through a paper, or explore a field through a literature survey.
 ---
 
 # Read Research Papers
 
-Read a paper in up to three passes instead of reading linearly from beginning to end. Give each pass a specific goal and build each pass on the preceding one. Stop when the completed pass is sufficient for the reading purpose.
+Read a paper in up to three passes. Use the reading goal and any requested stopping point to set the depth. Build each pass on the preceding one. When the reader wants to learn alongside you, follow [Guided Reading](#guided-reading).
 
 ## Paper Source
 
@@ -28,22 +28,22 @@ Complete the pass by answering the five Cs:
 4. **Contributions:** State the authors' claimed contributions.
 5. **Clarity:** Judge whether the paper is well written.
 
-Decide whether to continue. Stop when the paper is not relevant, the required background is missing, the assumptions appear invalid, or a first-pass understanding is sufficient.
+When screening, use relevance, background needs, and apparent plausibility to decide whether a deeper pass is worthwhile. When studying a chosen paper, address the prerequisite that blocks the current passage, then return to that passage.
 
 ## Second Pass
 
-Spend up to one hour reading with greater care while ignoring details such as proofs. Record key points and comments while reading.
+Spend up to one hour reading with greater care. Set aside details outside the reading goal and record key points and comments.
 
 1. Read the methods and results relevant to the reading goal, including their figures and tables.
 2. For each main claim you discuss, perform a check suited to the claim.
    - **Mechanism:** Trace one concrete input through the relevant steps to the output. Check dimensions and constraints where they affect the result.
    - **Derivation:** State the assumptions and work through the step the claim depends on.
-   - **Experiment:** Identify the data, metric, baseline, changed variables, and result. Check what the comparison supports and what uncertainty the paper reports.
+   - **Experiment:** Identify the data, metric, baseline, changed variables, and result. Check relevant figure axes and units, what the comparison supports, and what uncertainty the paper reports.
 3. Mark relevant unread references for further reading and background study.
 
 Complete the pass when you can explain the main argument and show what the checks established. Mark any unresolved point that limits the explanation.
 
-When the paper remains unclear, identify whether the cause is unfamiliar terminology, an unfamiliar proof or experimental technique, poor writing, unsupported assertions, excessive forward references, or reader fatigue. Then choose to set the paper aside, return after reading background material, or continue to the third pass.
+When the paper remains unclear, identify whether the cause is unfamiliar terminology, an unfamiliar proof or experimental technique, poor writing, unsupported assertions, excessive forward references, or reader fatigue. If background blocks a chosen paper, address the prerequisite and return to the passage. Otherwise, decide whether to pause or use a deeper pass.
 
 ## Third Pass
 
@@ -58,6 +58,16 @@ Read for full understanding by virtually re-implementing the paper.
 Allow about four or five hours for a beginner and about one hour for an experienced reader.
 
 Complete the pass when the entire structure can be reconstructed from memory and the paper's strong and weak points can be identified. Pinpoint implicit assumptions, missing citations to relevant work, and potential problems with experimental or analytical techniques.
+
+## Guided Reading
+
+Give the reader a short map with source locations, then work on the current point of confusion. If the reader has yet to identify it, ask for a prediction or explanation that can reveal where the difficulty begins.
+
+1. Ask one focused question and wait for the reader's reasoning before sharing the answer. Look up source facts yourself.
+2. If the response reveals a gap, explain the missing premise or step with its source. Use an external explanation when it addresses that gap and connect it back to the paper.
+3. Change one relevant condition and ask the reader to reason through the new case. Treat understanding of that point as demonstrated when the reader can explain the result in the changed case. If the gap persists, give a smaller prompt and check again.
+
+For a focused third-pass exercise, name the component the reader is reconstructing and check that component's reasoning or behavior. Credit conceptual reconstruction for demonstrated reasoning, implementation for executed checks, and experimental replication for an actual replication run. An agent's explanation alone leaves learner understanding unassessed.
 
 ## Literature Survey
 
@@ -76,7 +86,8 @@ Report only the material supported by the passes performed:
 - Name the edition read and cite a section, page, equation, figure, or table for each key paper claim or result discussed. Attribute external explanations to their sources and label your own deductions.
 - After the first pass, report the five Cs.
 - After the second pass, report the main thrust, supporting evidence, and relevant unread references.
-- After the third pass, report the reconstructed structure, strengths, weaknesses, assumptions, missing citations, technique issues, and future-work ideas.
+- After a full third pass, report the reconstructed structure, strengths, weaknesses, assumptions, missing citations, technique issues, and future-work ideas. For a focused exercise, report its scope and what was demonstrated.
+- In guided reading, record the current question, what the reader demonstrated, and any follow-up still open.
 - For a literature survey, report the seed papers, shared citations, repeated researchers, top conferences, recent proceedings, and each iteration that changed the survey set.
 
 ## Method Source
